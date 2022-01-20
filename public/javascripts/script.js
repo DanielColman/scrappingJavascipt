@@ -12,6 +12,7 @@ async function getNews(req) {
 
     let news = [];
     const browser = await puppeteer.launch({
+        headless: true,
         'args': [
             '--no-sandbox',
             '--disable-setuid-sandbox'
