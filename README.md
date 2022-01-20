@@ -13,8 +13,10 @@ API RESTful que provee la informacion apificada de la pagina https://www.abc.com
     https://dcolman-api-roshka.herokuapp.com/api-docs
 
 ## Probado con las siguientes versiones
-    node --version = v16.13.2
-    npm --version = 8.3.1
+### Node.js v16.13.2 | Check your version:
+    node --version
+### npm 8.3.1 | Check your version:
+    npm --version 
 
 ## Install
 
