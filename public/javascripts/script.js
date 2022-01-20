@@ -11,7 +11,12 @@ const puppeteer = require('puppeteer');
 async function getNews(req) {
 
     let news = [];
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+        'args': [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
     const page = await browser.newPage();
 
     async function getPageData(pageNumber = 1) {
