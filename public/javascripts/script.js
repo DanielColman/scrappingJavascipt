@@ -8,6 +8,7 @@ Retorna: un arreglo de objetos con los datos de las noticias
 
 const puppeteer = require('puppeteer');
 
+
 async function getNews(req) {
 
     let news = [];
