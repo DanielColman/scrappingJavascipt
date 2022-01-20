@@ -24,9 +24,9 @@ router.get('/consulta', function(req, res) {
                     res.status(404).json({ "codigo": "g267", "error": `No se encuentran noticias para el texto: ${req.query.q}` })
                 }
             })
-            .catch(err => {
-                res.status(500).json({ "codigo": "g100", "error": "Error interno del servidor" });
-            });
+            //.catch(err => {
+            //    res.status(500).json({ "codigo": "g100", "error": "Error interno del servidor" });
+            //});
     }
 });
 
