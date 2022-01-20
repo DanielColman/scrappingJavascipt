@@ -6,10 +6,10 @@ Prueba técnica para la empresa Roshka
 API RESTful que provee la informacion apificada de la pagina https://www.abc.com.py/buscar/ solicitada como Prueba Tecnica por la empresa Roshka.
 
 ## Deploy en Heroku
-    Puede realizar las Peticiones directamente en:
+### Puede realizar las Peticiones directamente en:
     https://dcolman-api-roshka.herokuapp.com/consulta?q={Texto_Filtro}
     
-    Documentacion Swagger
+### Documentación Swagger:
     https://dcolman-api-roshka.herokuapp.com/api-docs
 
 ## Probado con las siguientes versiones
@@ -24,7 +24,7 @@ API RESTful que provee la informacion apificada de la pagina https://www.abc.com
 
     npm start
 
-## Documentacion Swagger
+## Documentación Swagger
 
     http://localhost:3001/api-docs
 
