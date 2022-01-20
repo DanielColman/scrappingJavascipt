@@ -17,10 +17,14 @@ API RESTful que provee la informacion apificada de la pagina https://www.abc.com
 
     npm start
 
+## Documentacion Swagger
+
+    http://localhost:3001/api-docs
+
 
 # REST API
 
-La REST API es descripta abajo.
+La API RESTful es descripta abajo.
 
 ## Get
 
