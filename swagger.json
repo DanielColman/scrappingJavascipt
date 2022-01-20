@@ -1,107 +1,104 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "title": "API RESTful PRUEBA TECNICA",
-    "description": "API RESTful que provee la informacion apificada de la pagina https://www.abc.com.py/buscar/ solicitada como Prueba Tecnica por la empresa Roshka.",
-    "version": "1.0.0"
-  },
-  "host": "localhost:3001",
-  "tags": [
-    {
-      "name": "consulta",
-      "description": "EndPoint encargada de obtener las noticias"
-    }
-  ],
-  "schemes": [
-    "http"
-  ],
-  "paths": {
-    "/consulta": {
-      "get": {
-        "tags": [
-          "consulta"
-        ],
-        "summary": "Obtiene los recursos filtrados por un parametro dado.",
-        "description": "Retorna un objeto JSON con las noticias coincidentes",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "q",
-            "in": "query",
-            "description": "Texto a tener en cuenta para el filtro",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Consulta"
-            }
-          },
-          "400": {
-            "description": "Parámetros inválidos",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "No se encuentran noticias para el texto",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "No se encuentran noticias para el texto",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "Consulta": {
-      "type": "object",
-      "properties": {
-        "fecha": {
-          "type": "string",
-          "description": "Fecha de publicacion de la noticia en formato ISO-8601."
-        },
-        "enlace": {
-          "type": "string",
-          "description": "URL de la noticia."
-        },
-        "enlace_foto": {
-          "type": "string",
-          "description": "URL de la imagen de la noticia."
-        },
-        "titulo": {
-          "type": "string",
-          "description": "Titulo de la noticia."
-        },
-        "resumen": {
-          "type": "string",
-          "description": "Breve resumen de la noticia."
-        }
-      }
+    "swagger": "2.0",
+    "info": {
+        "title": "API RESTful PRUEBA TECNICA",
+        "description": "API RESTful que provee la informacion apificada de la pagina https://www.abc.com.py/buscar/ solicitada como Prueba Tecnica por la empresa Roshka.",
+        "version": "1.0.0"
     },
-    "Error": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "string",
-          "description": "Codigo de error."
-        },
-        "error": {
-          "type": "string",
-          "description": "Tipo de error arrojado."
+    "host": "dcolman-api-roshka.herokuapp.com",
+    "tags": [{
+        "name": "consulta",
+        "description": "EndPoint encargada de obtener las noticias"
+    }],
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "paths": {
+        "/consulta": {
+            "get": {
+                "tags": [
+                    "consulta"
+                ],
+                "summary": "Obtiene los recursos filtrados por un parametro dado.",
+                "description": "Retorna un objeto JSON con las noticias coincidentes",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "q",
+                    "in": "query",
+                    "description": "Texto a tener en cuenta para el filtro",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Consulta"
+                        }
+                    },
+                    "400": {
+                        "description": "Parámetros inválidos",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "No se encuentran noticias para el texto",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "No se encuentran noticias para el texto",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
         }
-      }
+    },
+    "definitions": {
+        "Consulta": {
+            "type": "object",
+            "properties": {
+                "fecha": {
+                    "type": "string",
+                    "description": "Fecha de publicacion de la noticia en formato ISO-8601."
+                },
+                "enlace": {
+                    "type": "string",
+                    "description": "URL de la noticia."
+                },
+                "enlace_foto": {
+                    "type": "string",
+                    "description": "URL de la imagen de la noticia."
+                },
+                "titulo": {
+                    "type": "string",
+                    "description": "Titulo de la noticia."
+                },
+                "resumen": {
+                    "type": "string",
+                    "description": "Breve resumen de la noticia."
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "codigo": {
+                    "type": "string",
+                    "description": "Codigo de error."
+                },
+                "error": {
+                    "type": "string",
+                    "description": "Tipo de error arrojado."
+                }
+            }
+        }
     }
-  }
 }
