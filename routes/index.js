@@ -25,8 +25,7 @@ router.get('/consulta', function(req, res) {
                 }
             })
             .catch(err => {
-                res.status(500)
-                    //res.status(500).json({ "codigo": "g100", "error": "Error interno del servidor" });
+                res.status(500).json({ "codigo": "g100", "error": "Error interno del servidor" });
             });
     }
 });
