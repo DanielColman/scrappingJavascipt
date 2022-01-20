@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../swagger.json');
 // (getNesw) Script encargado de realizar web scraping a la web del Diario
 var getNews = require('../public/javascripts/script');
 
@@ -28,5 +30,8 @@ router.get('/consulta', function(req, res) {
     }
 });
 
+/* GET Swagger Document */
+router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 module.exports = router;
